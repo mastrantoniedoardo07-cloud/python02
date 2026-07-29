@@ -1,14 +1,14 @@
 def garden_operations(operation_number):
-        if operation_number == 0:
-            int("abc")
-        elif operation_number == 1:
-            1 / 0
-        elif operation_number == 2:
-            open("non_existent_file.txt", "r")
-        elif operation_number == 3:
-            "Garden" + 42
-        else:
-            return
+    if operation_number == 0:
+        int("abc")
+    elif operation_number == 1:
+        1 / 0
+    elif operation_number == 2:
+        open("non_existent_file.txt", "r")
+    elif operation_number == 3:
+        "Garden" + 42
+    else:
+        return
 
 
 def test_error_types():
@@ -28,23 +28,19 @@ def test_error_types():
             print(f"Caught FileNotFoundError: {e}")
         except TypeError as e:
             print(f"Caught TypeError: {e}")
-        
-        op += 1  # Incremento per l'iterazione successiva
+        op += 1
 
     print("\n" + "=" * 45)
     print("=== Testing Multiple Exceptions in One Block ===")
-
-    # Test 2: Gestione con cattura multipla (tupla) usando un altro ciclo while
     op = 0
     while op < 4:
         print(f"\nTesting operation_number = {op} (multiple catch):")
         try:
             garden_operations(op)
-        except (ValueError, ZeroDivisionError, FileNotFoundError, TypeError) as e:
+        except (ValueError, ZeroDivisionError,
+                FileNotFoundError, TypeError) as e:
             print(f"Caught an expected error ({type(e).__name__}): {e}")
-        
-        op += 1  # Incremento per l'iterazione successiva
-
+        op += 1
     print("\nAll tests completed - program didn't crash!")
 
 

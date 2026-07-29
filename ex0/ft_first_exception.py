@@ -6,7 +6,6 @@ def input_temperature(temp_str):
     except ValueError as e:
         print(f"Caught input_temperature error: {e}")
         return None
-    
 
 
 def test_temperature():
@@ -19,7 +18,7 @@ def test_temperature():
     print(f"Input data is  {str}")
     input_temperature(str)
     print()
-    return(print("All tests completed - program didn't crash!"))
+    return (print("All tests completed - program didn't crash!"))
 
 
 if __name__ == "__main__":
